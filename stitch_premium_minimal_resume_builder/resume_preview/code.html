@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ResumEase - Preview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#302f39",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "on-tertiary-fixed": "#351000",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#464555",
+                    "tertiary-container": "#a44100",
+                    "primary-container": "#4f46e5",
+                    "tertiary": "#7e3000",
+                    "surface-tint": "#4d44e3",
+                    "surface-bright": "#fcf8ff",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1b24",
+                    "secondary-container": "#6063ee",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed": "#07006c",
+                    "inverse-on-surface": "#f3effc",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "surface-variant": "#e4e1ee",
+                    "surface": "#fcf8ff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "secondary-fixed": "#e1e0ff",
+                    "surface-container-highest": "#e4e1ee",
+                    "outline-variant": "#c7c4d8",
+                    "surface-container": "#f0ecf9",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-dim": "#dcd8e5",
+                    "on-primary-container": "#dad7ff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1b24",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f5f2ff",
+                    "secondary": "#4648d4",
+                    "primary-fixed": "#e2dfff",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "background": "#fcf8ff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-container-high": "#eae6f4",
+                    "on-tertiary-container": "#ffd2be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "unit": "8px",
+                    "gutter": "12px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ios-shadow {
+            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Glassmorphism utility */
+        .glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md transition-colors duration-300">
+<!-- iPhone 16 Pro Container Frame (Centered for web preview) -->
+<div class="relative mx-auto my-8 w-full max-w-[402px] h-[874px] bg-black rounded-[55px] border-[8px] border-neutral-800 shadow-2xl overflow-hidden flex flex-col">
+<!-- Dynamic Island -->
+<div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-9 bg-black rounded-full z-[60]"></div>
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-container-padding py-md w-full bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 transition-transform duration-200" onclick="window.history.back()">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</button>
+<h1 class="font-display text-headline-md text-primary tracking-tight">Preview</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:opacity-80 transition-opacity active:scale-95" id="theme-toggle">
+<span class="material-symbols-outlined text-primary" id="theme-icon">dark_mode</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container text-label-md font-bold">
+                    JD
+                </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto hide-scrollbar bg-surface-container-low relative p-4 pb-48">
+<!-- Resume Document Canvas -->
+<div class="w-full bg-white rounded-xl shadow-xl p-8 transition-all duration-500 scale-95 origin-top mb-8" id="resume-document">
+<!-- Resume Content (Simulated) -->
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-2xl font-bold text-slate-900">Jane Doe</h2>
+<p class="text-indigo-600 font-medium">Senior Product Designer</p>
+</div>
+<div class="text-right text-[10px] text-slate-400 space-y-1">
+<p>jane.doe@example.com</p>
+<p>+1 (555) 000-0000</p>
+<p>San Francisco, CA</p>
+</div>
+</div>
+<div class="h-[1px] bg-slate-100 w-full mb-6"></div>
+<div class="space-y-6">
+<section>
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Experience</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-sm">
+<span class="font-bold text-slate-800">Lead UI Designer @ TechFlow</span>
+<span class="text-slate-500 italic">2021 — Present</span>
+</div>
+<p class="text-xs text-slate-600 mt-1 leading-relaxed">Spearheaded the redesign of the core SaaS platform, resulting in a 40% increase in user engagement.</p>
+</div>
+<div>
+<div class="flex justify-between text-sm">
+<span class="font-bold text-slate-800">Product Designer @ InnovateIQ</span>
+<span class="text-slate-500 italic">2018 — 2021</span>
+</div>
+<p class="text-xs text-slate-600 mt-1 leading-relaxed">Developed design systems that reduced engineering hand-off time by 25%.</p>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Education</h3>
+<div>
+<div class="flex justify-between text-sm">
+<span class="font-bold text-slate-800">BFA in Graphic Design</span>
+<span class="text-slate-500 italic">RISD</span>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Skills</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded">Figma</span>
+<span class="px-2 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded">Tailwind CSS</span>
+<span class="px-2 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded">React</span>
+<span class="px-2 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded">Prototyping</span>
+</div>
+</section>
+</div>
+</div>
+<!-- Template Switcher Section (Asymmetric Grid) -->
+<div class="w-full space-y-4">
+<div class="flex justify-between items-center px-1">
+<h3 class="font-headline-md text-on-surface">Switch Template</h3>
+<a class="text-primary text-label-md font-bold hover:opacity-80 transition-opacity" href="#">View All</a>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4 px-1">
+<!-- Template Card 1 (Active) -->
+<button class="flex-shrink-0 w-32 group">
+<div class="aspect-[3/4] w-full rounded-xl bg-primary ring-2 ring-primary ring-offset-2 ring-offset-background overflow-hidden relative shadow-lg active:scale-95 transition-all">
+<div class="absolute inset-0 bg-white/10 flex items-center justify-center opacity-100">
+<span class="material-symbols-outlined text-white text-3xl">check_circle</span>
+</div>
+<div class="w-full h-full bg-cover bg-center grayscale-0" data-alt="A clean, minimalist resume template with a sidebar layout. The design features high-end professional typography, sophisticated whitespace, and a modern light-mode aesthetic consistent with a SaaS design system." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR5vUPP3CIDSbT4tfwiFEZJ4rKV3YQBLubJAvnil19M5JWnFdLv-eJGx4UuDc1HK-1leNCQOLFhqb3HUFSdBj-G8XRLQ-hfQbXPjqrOPUu1PUFC3tnIqLJaA0WRlOo8ZQGY9XOJtrZoa9NDks9wnN5X9V9rbQDAWzBO4RIpd9j4VG2ZgjDSBcLC18Uijr0uolG4BLcrcyHQrwKVDlNsATWK16r8pQCuiSjYuT5dSUV8DargBpP2DNVJTHZOGMYf9cPJmrMSMDqc3zB')"></div>
+</div>
+<span class="mt-2 block text-label-md font-bold text-primary">Minimal Pro</span>
+</button>
+<!-- Template Card 2 -->
+<button class="flex-shrink-0 w-32 group">
+<div class="aspect-[3/4] w-full rounded-xl bg-surface-container border border-outline-variant overflow-hidden relative shadow-sm hover:shadow-md active:scale-95 transition-all">
+<div class="w-full h-full bg-cover bg-center opacity-60" data-alt="A bold, modern resume template with dark headers and colorful accent blocks. The layout uses an asymmetric grid to highlight skills and projects, perfectly suited for creative professionals in the tech industry." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs0W_-AwKZQn2PcuEOmGEOq42QaFG18F9O7riXTNWgkcLVAjX4dNofBFwRpqf0QxsYD6HVKZDGD28lqPGEDRayFE1tMqsm6_ZjCPX4mbM8hBcQwSVLoQ4CNjWH6EzZhJ9AkYp95QToQXCgvTHt0TzUIaer16J3RM0himDidHQx-gkaiCMyKTXsWfjfF3nuQli3o0lz6jdulJBJEoBgpr_8738iTQJz5DI-E-qDbwQcXJ6y3JvZsSwiPFMp48S_47daiXr0mT7aUfJG')"></div>
+</div>
+<span class="mt-2 block text-label-md font-medium text-on-surface-variant">Modernist</span>
+</button>
+<!-- Template Card 3 -->
+<button class="flex-shrink-0 w-32 group">
+<div class="aspect-[3/4] w-full rounded-xl bg-surface-container border border-outline-variant overflow-hidden relative shadow-sm hover:shadow-md active:scale-95 transition-all">
+<div class="w-full h-full bg-cover bg-center opacity-60" data-alt="A sophisticated executive resume template with traditional serif typography and a centered header. The design exudes authority and experience, using a rich, monochromatic palette of charcoal and ivory." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3u10wkt6p5cX8hTokOx9c3cv_om0U1pG7qDeF_bg0Ef6kGLeStJoS2907oVVkykhRbIDJf3suRK8i4UOqaCc2D1jvnODp8yejaIMiLDx-MR2RDa7sLute1i33byAmL10W0wFGLUCC3TrLxEjpnUmYb3y62Re6mTMO94GuFdMDC6zrNzSeuLN0xJ0sSPTKDMCvqUg6oFe-vp2tBKOAnjZXzAnpKo7OocVJjDocpFL3g_j0JcrDSM51vlt4lXNphjuAqo0q4FF-Q9GU')"></div>
+</div>
+<span class="mt-2 block text-label-md font-medium text-on-surface-variant">Executive</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Floating Action Buttons (Contextual FABs) -->
+<div class="fixed bottom-24 right-container-padding flex flex-col gap-3 items-end">
+<!-- Share FAB -->
+<button class="w-12 h-12 rounded-full bg-white shadow-lg border border-outline-variant flex items-center justify-center text-primary active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</button>
+<!-- Download FAB (Primary) -->
+<button class="h-14 px-6 rounded-full bg-primary text-on-primary shadow-[0px_8px_24px_rgba(53,37,205,0.3)] flex items-center gap-2 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">file_download</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Download PDF</span>
+</button>
+</div>
+<!-- BottomNavBar (Shared Component) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-8 pt-2 bg-surface/70 dark:bg-inverse-surface/70 backdrop-blur-xl shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim relative after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard_customize</span>
+<span class="font-label-sm text-label-sm">Templates</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</div>
+<script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                themeIcon.textContent = 'light_mode';
+            } else {
+                themeIcon.textContent = 'dark_mode';
+            }
+        });
+
+        // Resume scale-up effect on load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const doc = document.getElementById('resume-document');
+                doc.classList.remove('scale-95');
+                doc.classList.add('scale-100');
+            }, 100);
+        });
+
+        // Interactive template switcher
+        const templateButtons = document.querySelectorAll('.group');
+        templateButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                templateButtons.forEach(b => {
+                    const inner = b.querySelector('.aspect-\\[3\\/4\\]');
+                    inner.classList.remove('ring-2', 'ring-primary', 'ring-offset-2', 'ring-offset-background', 'shadow-lg');
+                    inner.classList.add('border', 'border-outline-variant', 'shadow-sm');
+                    const overlay = inner.querySelector('.bg-white\\/10');
+                    if(overlay) overlay.classList.add('hidden');
+                    b.querySelector('span:last-child').classList.replace('text-primary', 'text-on-surface-variant');
+                    b.querySelector('span:last-child').classList.replace('font-bold', 'font-medium');
+                    inner.querySelector('div:last-child').classList.add('opacity-60');
+                });
+                
+                const inner = btn.querySelector('.aspect-\\[3\\/4\\]');
+                inner.classList.add('ring-2', 'ring-primary', 'ring-offset-2', 'ring-offset-background', 'shadow-lg');
+                inner.classList.remove('border', 'border-outline-variant', 'shadow-sm');
+                const overlay = inner.querySelector('.bg-white\\/10');
+                if(overlay) overlay.classList.remove('hidden');
+                btn.querySelector('span:last-child').classList.replace('text-on-surface-variant', 'text-primary');
+                btn.querySelector('span:last-child').classList.replace('font-medium', 'font-bold');
+                inner.querySelector('div:last-child').classList.remove('opacity-60');
+            });
+        });
+    </script>
+</body></html>

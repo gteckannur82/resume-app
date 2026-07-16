@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>ResumEase - Authentication</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#302f39",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "on-tertiary-fixed": "#351000",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#464555",
+                    "tertiary-container": "#a44100",
+                    "primary-container": "#4f46e5",
+                    "tertiary": "#7e3000",
+                    "surface-tint": "#4d44e3",
+                    "surface-bright": "#fcf8ff",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1b24",
+                    "secondary-container": "#6063ee",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed": "#07006c",
+                    "inverse-on-surface": "#f3effc",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "surface-variant": "#e4e1ee",
+                    "surface": "#fcf8ff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "secondary-fixed": "#e1e0ff",
+                    "surface-container-highest": "#e4e1ee",
+                    "outline-variant": "#c7c4d8",
+                    "surface-container": "#f0ecf9",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-dim": "#dcd8e5",
+                    "on-primary-container": "#dad7ff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1b24",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f5f2ff",
+                    "secondary": "#4648d4",
+                    "primary-fixed": "#e2dfff",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "background": "#fcf8ff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-container-high": "#eae6f4",
+                    "on-tertiary-container": "#ffd2be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "unit": "8px",
+                    "gutter": "12px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .iphone-frame {
+            width: 393px;
+            height: 852px;
+            background: #ffffff;
+            border-radius: 54px;
+            box-shadow: 0 0 0 11px #1f1f1f, 0 0 0 13px #2f2f2f, 0 20px 50px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dynamic-island {
+            width: 120px;
+            height: 35px;
+            background: #000;
+            border-radius: 20px;
+            position: absolute;
+            top: 11px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .auth-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
+
+        .toggle-slider {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface">
+<div class="iphone-frame">
+<div class="dynamic-island"></div>
+<!-- Background Atmospheric Effect -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+
+</div>
+<!-- Main Content Wrapper -->
+<div class="relative z-10 flex flex-col h-full px-container-padding pt-xl pb-lg">
+<!-- Brand Anchor -->
+<header class="mt-12 mb-xl flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center shadow-lg mb-md">
+<span class="material-symbols-outlined text-on-primary text-4xl" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<h1 class="font-display text-display text-primary tracking-tight">ResumEase</h1>
+<p class="font-body-md text-on-surface-variant mt-xs">Career elevation, simplified.</p>
+</header>
+<!-- Auth Toggle -->
+<div class="bg-surface-container-low p-1 rounded-xl flex relative mb-xl">
+<div class="toggle-slider absolute top-1 left-1 bottom-1 w-[calc(50%-4px)] bg-white shadow-sm rounded-lg z-0" id="slider"></div>
+<button class="flex-1 py-2 font-label-md text-label-md z-10 text-primary transition-colors duration-300" onclick="toggleAuth('login')">Login</button>
+<button class="flex-1 py-2 font-label-md text-label-md z-10 text-on-surface-variant transition-colors duration-300" onclick="toggleAuth('signup')">Sign Up</button>
+</div>
+<!-- Forms Container -->
+<div class="flex-grow">
+<form class="space-y-md" id="authForm">
+<div class="space-y-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1" id="emailLabel">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-md">mail</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-xl font-body-md text-on-surface focus:border-primary transition-all" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-md">lock</span>
+<input class="w-full pl-10 pr-12 py-3 bg-white border border-outline-variant rounded-xl font-body-md text-on-surface focus:border-primary transition-all" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary" type="button">
+<span class="material-symbols-outlined text-md">visibility</span>
+</button>
+</div>
+</div>
+<div class="space-y-sm hidden opacity-0 auth-transition" id="confirmPassContainer">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Confirm Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-md">verified_user</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-xl font-body-md text-on-surface focus:border-primary transition-all" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center space-x-2 cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Remember me</span>
+</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#" id="forgotLink">Forgot password?</a>
+</div>
+<button class="w-full py-3.5 bg-primary-container text-on-primary font-headline-md text-headline-md rounded-xl shadow-lg active:scale-95 transition-all duration-200 mt-xl" id="submitBtn" type="submit">
+                        Sign In
+                    </button>
+</form>
+<!-- Divider -->
+<div class="flex items-center my-xl">
+<div class="flex-grow h-[1px] bg-outline-variant opacity-50"></div>
+<span class="px-3 font-label-sm text-label-sm text-outline">OR</span>
+<div class="flex-grow h-[1px] bg-outline-variant opacity-50"></div>
+</div>
+<!-- Social Login -->
+<button class="w-full py-3 bg-white border border-outline-variant flex items-center justify-center space-x-3 rounded-xl hover:bg-surface-container transition-colors active:scale-95 duration-200">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD7PjkrlaepewqzH89SgPDBQ3Ls_9XlSwwnGLHKsSS7U5Ax6Sn3OMfCrRs6X3kF9R2Sfg-cgJYogRf717KLuoFHr9b6Wc1GRNEB01_QDDupLFFwzMm_HqlhZW5ZcLKbMZykJnBYFpMxgwGniwSRasTT5aCRKOMBNd3eCdIbH_gofYqdvmEUdGqulSx0fBX4Jv6U9z2aSHsjHKWuzsXd0lKchpP-CGInX7sB71l1Sv70GrMpsfaquMv0kNNvuVhdwRoHvLRWqxsfH3D"/>
+<span class="font-label-md text-label-md text-on-surface">Continue with Google</span>
+</button>
+</div>
+<!-- Footer Actions -->
+<footer class="mt-auto text-center space-y-md">
+<a class="block font-label-md text-label-md text-primary hover:opacity-80 transition-opacity" href="#">Continue as Guest</a>
+<p class="font-label-sm text-label-sm text-outline px-xl">
+                    By continuing, you agree to our <a class="underline" href="#">Terms of Service</a> and <a class="underline" href="#">Privacy Policy</a>.
+                </p>
+</footer>
+</div>
+<!-- iPhone Notch & Status Bar Sim -->
+<div class="absolute top-0 w-full flex justify-between px-10 pt-4 z-50">
+<span class="text-[14px] font-bold text-on-surface">9:41</span>
+<div class="flex space-x-1.5 items-center">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[16px]">battery_5_bar</span>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-on-surface/20 rounded-full z-50"></div>
+</div>
+<script>
+        let currentMode = 'login';
+
+        function toggleAuth(mode) {
+            if (mode === currentMode) return;
+            currentMode = mode;
+
+            const slider = document.getElementById('slider');
+            const submitBtn = document.getElementById('submitBtn');
+            const confirmPass = document.getElementById('confirmPassContainer');
+            const forgotLink = document.getElementById('forgotLink');
+            const buttons = document.querySelectorAll('.bg-surface-container-low button');
+
+            if (mode === 'signup') {
+                slider.style.transform = 'translateX(100%)';
+                submitBtn.textContent = 'Create Account';
+                confirmPass.classList.remove('hidden');
+                setTimeout(() => confirmPass.classList.add('opacity-100'), 10);
+                forgotLink.style.visibility = 'hidden';
+                buttons[0].classList.replace('text-primary', 'text-on-surface-variant');
+                buttons[1].classList.replace('text-on-surface-variant', 'text-primary');
+            } else {
+                slider.style.transform = 'translateX(0%)';
+                submitBtn.textContent = 'Sign In';
+                confirmPass.classList.remove('opacity-100');
+                setTimeout(() => confirmPass.classList.add('hidden'), 400);
+                forgotLink.style.visibility = 'visible';
+                buttons[1].classList.replace('text-primary', 'text-on-surface-variant');
+                buttons[0].classList.replace('text-on-surface-variant', 'text-primary');
+            }
+        }
+
+        // Micro-interactions for form submission
+        document.getElementById('authForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const originalText = btn.textContent;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span>';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>

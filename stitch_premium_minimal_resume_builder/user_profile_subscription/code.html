@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>ResumEase - Profile &amp; Subscription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#302f39",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "on-tertiary-fixed": "#351000",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#464555",
+                    "tertiary-container": "#a44100",
+                    "primary-container": "#4f46e5",
+                    "tertiary": "#7e3000",
+                    "surface-tint": "#4d44e3",
+                    "surface-bright": "#fcf8ff",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1b24",
+                    "secondary-container": "#6063ee",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed": "#07006c",
+                    "inverse-on-surface": "#f3effc",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "surface-variant": "#e4e1ee",
+                    "surface": "#fcf8ff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "secondary-fixed": "#e1e0ff",
+                    "surface-container-highest": "#e4e1ee",
+                    "outline-variant": "#c7c4d8",
+                    "surface-container": "#f0ecf9",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-dim": "#dcd8e5",
+                    "on-primary-container": "#dad7ff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1b24",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f5f2ff",
+                    "secondary": "#4648d4",
+                    "primary-fixed": "#e2dfff",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "background": "#fcf8ff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-container-high": "#eae6f4",
+                    "on-tertiary-container": "#ffd2be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "unit": "8px",
+                    "gutter": "12px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overscroll-behavior-y: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .custom-shadow {
+            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+        }
+        .iphone-frame {
+            width: 393px;
+            height: 852px;
+            margin: 20px auto;
+            position: relative;
+            background: #fcf8ff;
+            border: 12px solid #1b1b24;
+            border-radius: 54px;
+            overflow: hidden;
+            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25);
+        }
+        .safe-area-bottom {
+            padding-bottom: 34px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        @media (max-width: 450px) {
+            .iphone-frame {
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+<div class="iphone-frame flex flex-col overflow-hidden">
+<!-- TopAppBar (From JSON) -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-container-padding py-md w-full bg-surface/70 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a young executive with a friendly expression. The lighting is soft and cinematic, with a clean minimalist office background that matches the light mode UI. The color palette is composed of soft blues, whites, and neutral greys to convey sophistication and professional confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKPji4as3Qdnv3ZukMtW39RjcO6QmHhoc7FVvKQdbd4rsD2p_SpnOQb60pJH_1YxR6iTKVB1eGcc13Brx3Gy1z1cYaEB64nfnPPa_UzU_vG3gWv1f6_jQjr5sNNNvYYlxXf_Liu7EtkvNXkair4Q23Qd2_HVmx_gRSFuJWWqIw33660tUfJ3xTykThhcgmZUT2HnoYSGO6FEc-5YpHOeRIQNvmQoaNqonpIoy8Wif6eQMvLhgNZPHa7LwyWLRB9p2jPV2zHwSzHSoc"/>
+</div>
+<h1 class="font-display text-headline-md text-primary tracking-tight">ResumEase</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto hide-scrollbar px-container-padding pb-xl">
+<!-- User Profile Section -->
+<section class="mt-lg text-center flex flex-col items-center">
+<div class="relative group">
+<div class="w-24 h-24 rounded-3xl overflow-hidden custom-shadow border-4 border-white mb-md">
+<img class="w-full h-full object-cover" data-alt="A detailed headshot of a smiling professional male in a modern business-casual outfit. He is set against a clean, architectural background with soft natural lighting and a high-key aesthetic. The image reflects the premium SaaS aesthetic with crisp details and a warm, inviting tone that matches the lavender-tinted UI surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBufwGNDhy6dJAciWgu5-gWh6ZCJ_b0D1FUpRUMqfy6Q8sBRVFsm7hLCC6-ScPZDCsp7z7R9K-meYArcBVCbuvxvP1dcYv0ueOGhkkL9-hsEoMem4wDI8s_62XFE2AABqowKw1aYd8jz6p2IIOX7XoZnYGjv6VCNuLuDgGOtVNZKF8vXPX3S9P90rSe0BZcwANyQPE2JNnTiNE_GGiPhpHEeQ-NQQJ9yFEAm-5jYqhK5Z6FdQz8M1Jf-vJGNrPFi7yZ32WkM4H74qAe"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-lg border-2 border-white">
+                        PREMIUM
+                    </div>
+</div>
+<h2 class="font-headline-lg text-on-surface mt-sm">Alex Henderson</h2>
+<p class="font-body-md text-on-surface-variant">Senior Product Designer</p>
+</section>
+<!-- Go Pro Card -->
+<section class="mt-xl relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-secondary p-lg text-on-primary custom-shadow group">
+
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-md font-bold">Go Pro</h3>
+<p class="font-body-md opacity-90">Unlock limitless potential</p>
+</div>
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+<ul class="space-y-sm mb-lg">
+<li class="flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                            Unlimited AI Resume Generation
+                        </li>
+<li class="flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                            Premium ATS-Ready Templates
+                        </li>
+<li class="flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                            One-Click LinkedIn Import
+                        </li>
+</ul>
+<button class="w-full bg-white text-primary font-bold py-md rounded-xl active:scale-95 transition-all shadow-lg">
+                        Upgrade Now — $9.99/mo
+                    </button>
+</div>
+</section>
+<!-- Menu List Section -->
+<section class="mt-xl space-y-md">
+<div class="flex items-center justify-between mb-sm">
+<h4 class="font-label-md text-on-surface-variant uppercase tracking-widest">Account &amp; Management</h4>
+</div>
+<!-- Menu Item -->
+<div class="bg-white rounded-xl p-md flex items-center justify-between custom-shadow active:scale-[0.98] transition-transform cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-primary-fixed rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">folder_shared</span>
+</div>
+<span class="font-headline-md text-on-surface text-base">Saved Resumes</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="bg-surface-container-high px-2 py-0.5 rounded-full text-xs font-bold text-on-surface-variant">12</span>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-md flex items-center justify-between custom-shadow active:scale-[0.98] transition-transform cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-secondary-fixed rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="font-headline-md text-on-surface text-base">Settings</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="bg-white rounded-xl p-md flex items-center justify-between custom-shadow active:scale-[0.98] transition-transform cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-tertiary-fixed rounded-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="font-headline-md text-on-surface text-base">Billing History</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="bg-white rounded-xl p-md flex items-center justify-between custom-shadow active:scale-[0.98] transition-transform cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-error-container/20 rounded-lg flex items-center justify-center text-error">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<span class="font-headline-md text-on-surface text-base">Sign Out</span>
+</div>
+</div>
+</section>
+<footer class="mt-xl text-center pb-24">
+<p class="font-label-sm text-outline-variant">Version 2.4.0 (Build 108)</p>
+</footer>
+</main>
+<!-- BottomNavBar (From JSON) -->
+<!-- Profile is Active -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 bg-surface/70 backdrop-blur-xl shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.05)] rounded-t-xl">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Templates -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard_customize</span>
+<span class="font-label-sm text-label-sm">Templates</span>
+</a>
+<!-- Create -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-4xl text-primary">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<!-- Profile (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- iPhone Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-black/20 rounded-full z-[60]"></div>
+</div>
+<script>
+        // Simple micro-interaction for menu items
+        document.querySelectorAll('.cursor-pointer').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.add('scale-95');
+                setTimeout(() => {
+                    this.classList.remove('scale-95');
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

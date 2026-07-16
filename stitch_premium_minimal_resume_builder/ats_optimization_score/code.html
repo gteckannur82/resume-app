@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#302f39",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#2f2ebe",
+            "on-tertiary-fixed": "#351000",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#464555",
+            "tertiary-container": "#a44100",
+            "primary-container": "#4f46e5",
+            "tertiary": "#7e3000",
+            "surface-tint": "#4d44e3",
+            "surface-bright": "#fcf8ff",
+            "tertiary-fixed": "#ffdbcc",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "on-secondary": "#ffffff",
+            "on-background": "#1b1b24",
+            "secondary-container": "#6063ee",
+            "on-secondary-container": "#fffbff",
+            "on-secondary-fixed": "#07006c",
+            "inverse-on-surface": "#f3effc",
+            "on-primary-fixed-variant": "#3323cc",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#ffb695",
+            "surface-variant": "#e4e1ee",
+            "surface": "#fcf8ff",
+            "primary": "#3525cd",
+            "outline": "#777587",
+            "secondary-fixed": "#e1e0ff",
+            "surface-container-highest": "#e4e1ee",
+            "outline-variant": "#c7c4d8",
+            "surface-container": "#f0ecf9",
+            "on-primary-fixed": "#0f0069",
+            "surface-dim": "#dcd8e5",
+            "on-primary-container": "#dad7ff",
+            "on-error-container": "#93000a",
+            "on-surface": "#1b1b24",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f5f2ff",
+            "secondary": "#4648d4",
+            "primary-fixed": "#e2dfff",
+            "secondary-fixed-dim": "#c0c1ff",
+            "background": "#fcf8ff",
+            "inverse-primary": "#c3c0ff",
+            "surface-container-high": "#eae6f4",
+            "on-tertiary-container": "#ffd2be"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xl": "32px",
+            "lg": "24px",
+            "sm": "8px",
+            "xs": "4px",
+            "container-padding": "20px",
+            "unit": "8px",
+            "gutter": "12px",
+            "md": "16px"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "display": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .gauge-gradient {
+      background: conic-gradient(from 0deg, #3525cd 0% 85%, #e4e1ee 85% 100%);
+    }
+    .safe-area-bottom {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-count {
+      animation: countUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    /* Hide scrollbar but keep functionality */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- iPhone 16 Pro Style Layout Container -->
+<div class="relative mx-auto max-w-[393px] min-h-screen bg-surface flex flex-col shadow-[0_0_80px_rgba(0,0,0,0.1)] overflow-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-container-padding py-md w-full bg-surface/70 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young executive in a sleek, modern office environment. The lighting is soft and natural, with a focus on professional confidence and a minimalist aesthetic that fits a high-end career platform. Bright, airy composition with cool blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4YELZvUKPLLRDPbK6El3q_iFIjTKFgeTTwhl37aDW3scVCL7Mj-Y7voaA4hqWkXgMDUrsiCY8DENxonI0xQgWTiyv1NFnlV3VquONEJWXjyhZieDe1h4GPqvfQIJQytFmk6RZqKRG3uuPzYj61EfnFSO3esCRUcbTjYvZtjf5LCBOcDfTS1Rjyuf94FNvrqe96AK-_0Tmnn7wDdpjR3cOI6xvrsMh9lup0QfNWn7_UBhofm3n0m87S7hMb8CJPGZMNNhpRORhDxsl"/>
+</div>
+<h1 class="font-display text-headline-md text-primary tracking-tight">ResumEase</h1>
+</div>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">notifications</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-container-padding pb-32 overflow-y-auto no-scrollbar">
+<!-- Screen Hero: ATS Score Gauge -->
+<section class="py-xl flex flex-col items-center">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">ATS Optimization</h2>
+<p class="font-body-md text-on-surface-variant">Your resume is performing better than 82% of candidates.</p>
+</div>
+<!-- Gauge Visualizer -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Outer Circle -->
+<svg class="absolute w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#e4e1ee" stroke-width="8"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="45" stroke="url(#gradient)" stroke-dasharray="282.7" stroke-dashoffset="42.4" stroke-linecap="round" stroke-width="8"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#3525cd"></stop>
+<stop offset="100%" stop-color="#6063ee"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Inner Content -->
+<div class="text-center animate-count">
+<span class="font-display text-[64px] leading-none text-primary">85</span>
+<div class="font-label-md text-on-surface-variant mt-1">OF 100 POINTS</div>
+</div>
+</div>
+<div class="mt-lg flex gap-4 w-full">
+<div class="flex-1 bg-surface-container p-md rounded-xl text-center shadow-sm">
+<div class="text-primary font-headline-md">High</div>
+<div class="font-label-sm text-on-surface-variant">Readability</div>
+</div>
+<div class="flex-1 bg-surface-container p-md rounded-xl text-center shadow-sm">
+<div class="text-tertiary-container font-headline-md">Medium</div>
+<div class="font-label-sm text-on-surface-variant">Keyword Match</div>
+</div>
+</div>
+</section>
+<!-- Optimization Checklist -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-on-surface">Missing Keywords</h3>
+<span class="font-label-md text-primary cursor-pointer hover:underline">Edit Resume</span>
+</div>
+<div class="grid grid-cols-1 gap-sm">
+<!-- Keyword Items -->
+<div class="glass-card p-md rounded-xl flex items-center justify-between shadow-sm border-l-4 border-error">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">error</span>
+<div>
+<p class="font-label-md text-on-surface font-bold">Cloud Infrastructure</p>
+<p class="font-label-sm text-on-surface-variant">Mention AWS, Azure, or GCP experience</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm active:scale-95 transition-transform">+ Add</button>
+</div>
+<div class="glass-card p-md rounded-xl flex items-center justify-between shadow-sm border-l-4 border-error">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">error</span>
+<div>
+<p class="font-label-md text-on-surface font-bold">Agile Methodology</p>
+<p class="font-label-sm text-on-surface-variant">Missing from professional summary</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm active:scale-95 transition-transform">+ Add</button>
+</div>
+<div class="glass-card p-md rounded-xl flex items-center justify-between shadow-sm border-l-4 border-tertiary-container">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<p class="font-label-md text-on-surface font-bold">Team Leadership</p>
+<p class="font-label-sm text-on-surface-variant">Quantify with number of reports</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm active:scale-95 transition-transform">+ Add</button>
+</div>
+</div>
+</section>
+<!-- Optimization Suggestions Bento -->
+<section class="mt-xl space-y-md">
+<h3 class="font-headline-md text-on-surface">Formatting Insights</h3>
+<div class="grid grid-cols-2 gap-md">
+<div class="col-span-1 bg-surface-container-high p-md rounded-xl aspect-square flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-[32px]">description</span>
+<div>
+<p class="font-label-md font-bold text-on-surface">File Type</p>
+<p class="font-label-sm text-on-surface-variant">PDF is optimal for this scan.</p>
+</div>
+</div>
+<div class="col-span-1 bg-surface-container-high p-md rounded-xl aspect-square flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-[32px]">query_stats</span>
+<div>
+<p class="font-label-md font-bold text-on-surface">Impact</p>
+<p class="font-label-sm text-on-surface-variant">Use more action verbs.</p>
+</div>
+</div>
+<div class="col-span-2 relative overflow-hidden bg-primary p-lg rounded-xl min-h-[140px] flex flex-col justify-center">
+
+<div class="relative z-10">
+<h4 class="font-headline-md text-on-primary">AI Optimizer</h4>
+<p class="font-body-md text-on-primary-container opacity-90 max-w-[80%]">Let our AI rewrite your bullet points for 95+ score.</p>
+<button class="mt-md bg-on-primary text-primary px-lg py-sm rounded-xl font-label-md font-bold active:scale-95 transition-transform">Start Optimization</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 bg-surface/70 backdrop-blur-xl shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.05)] rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">dashboard_customize</span>
+<span class="font-label-sm text-label-sm">Templates</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[32px] text-primary group-active:scale-90 transition-transform">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 cursor-pointer group">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+</div>
+<script>
+    // Micro-interaction for the Gauge
+    document.addEventListener('DOMContentLoaded', () => {
+      const circle = document.querySelector('circle[stroke="url(#gradient)"]');
+      const radius = circle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+      
+      // Target score 85%
+      const offset = circumference - (85 / 100) * circumference;
+      
+      circle.style.strokeDasharray = `${circumference} ${circumference}`;
+      circle.style.strokeDashoffset = circumference;
+      
+      setTimeout(() => {
+        circle.style.transition = 'stroke-dashoffset 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        circle.style.strokeDashoffset = offset;
+      }, 300);
+
+      // Animate the text count
+      const scoreElement = document.querySelector('.animate-count span');
+      let currentScore = 0;
+      const targetScore = 85;
+      const duration = 1500;
+      const startTime = performance.now();
+
+      function updateCount(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOutQuint = 1 - Math.pow(1 - progress, 5);
+        
+        currentScore = Math.floor(easeOutQuint * targetScore);
+        scoreElement.textContent = currentScore;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        }
+      }
+      
+      requestAnimationFrame(updateCount);
+    });
+  </script>
+</body></html>

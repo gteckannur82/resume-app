@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#302f39",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "on-tertiary-fixed": "#351000",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#464555",
+                    "tertiary-container": "#a44100",
+                    "primary-container": "#4f46e5",
+                    "tertiary": "#7e3000",
+                    "surface-tint": "#4d44e3",
+                    "surface-bright": "#fcf8ff",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1b24",
+                    "secondary-container": "#6063ee",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed": "#07006c",
+                    "inverse-on-surface": "#f3effc",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "surface-variant": "#e4e1ee",
+                    "surface": "#fcf8ff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "secondary-fixed": "#e1e0ff",
+                    "surface-container-highest": "#e4e1ee",
+                    "outline-variant": "#c7c4d8",
+                    "surface-container": "#f0ecf9",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-dim": "#dcd8e5",
+                    "on-primary-container": "#dad7ff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1b24",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f5f2ff",
+                    "secondary": "#4648d4",
+                    "primary-fixed": "#e2dfff",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "background": "#fcf8ff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-container-high": "#eae6f4",
+                    "on-tertiary-container": "#ffd2be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "unit": "8px",
+                    "gutter": "12px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .resume-shadow {
+            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-container-padding py-md w-full bg-surface/70 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed overflow-hidden resume-shadow">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling business person with a blurred office background. The lighting is soft and natural, emphasizing a high-end, executive aesthetic with clean lines and professional attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl2Kdw1-MbVP9JJjQw2WjlmOIraYPcElQehcgg2xgWeALpOPnvVsaAsum3jc8RoYcay6GTEH7BMMKJan2kX-2Ci5_LG5qGEIp0NT44JQrFGL1SaNQkdTy__iIoSXkrNTfwA8sAeCbQ2DmjZOnIWy0pb2dVMjssxttfQ_YRpn1D3lxmkLVz48Oj7wiiRAyqZDXILQXrTxEr4KcNV-qJBDXclX2KCKpsvU_QHHz8bkx659lpwF-n3eX6Hjfj-BPZVG15cvT_mjAHenQX"/>
+</div>
+<h1 class="font-display text-display text-primary tracking-tight text-xl">Templates</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pb-32">
+<!-- Search & Filter Section -->
+<section class="px-container-padding pt-lg space-y-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-xl pr-md py-md bg-surface-container-low border-none rounded-xl text-body-md focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" placeholder="Search templates..." type="text"/>
+</div>
+<div class="flex gap-sm overflow-x-auto no-scrollbar py-xs">
+<button class="px-lg py-sm rounded-full bg-primary text-on-primary font-label-md transition-all active:scale-95 whitespace-nowrap">All</button>
+<button class="px-lg py-sm rounded-full bg-surface-container-high text-on-surface-variant font-label-md hover:bg-surface-variant transition-all active:scale-95 whitespace-nowrap">Modern</button>
+<button class="px-lg py-sm rounded-full bg-surface-container-high text-on-surface-variant font-label-md hover:bg-surface-variant transition-all active:scale-95 whitespace-nowrap">Executive</button>
+<button class="px-lg py-sm rounded-full bg-surface-container-high text-on-surface-variant font-label-md hover:bg-surface-variant transition-all active:scale-95 whitespace-nowrap">Creative</button>
+<button class="px-lg py-sm rounded-full bg-surface-container-high text-on-surface-variant font-label-md hover:bg-surface-variant transition-all active:scale-95 whitespace-nowrap">Academic</button>
+</div>
+</section>
+<!-- Template Grid -->
+<section class="px-container-padding mt-xl grid grid-cols-2 gap-md">
+<!-- Template 1 -->
+<div class="group relative space-y-sm">
+<div class="aspect-[3/4] rounded-xl overflow-hidden resume-shadow bg-surface-container relative group-hover:ring-2 ring-primary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="A minimalist professional resume template for a software engineer. The design features a clean white background, sharp typography using a sans-serif font, and subtle indigo accents. The layout is structured with clear section headers for Experience, Education, and Skills, conveying an efficient and modern professional identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvT3cwPHfv3LBgcdFL6bCCUW0zzSNrLoANlT1TewP1Qx33JkIJs8hN6mHzcYOAsKd0iS6BgqlNbCFY-jNV_7Bni5tRkzEdkCQVmpT0exXvFVa3puqLbD7-rdZtlo8o0cn1ze7AxdH0PYjhuQqb1Ms__bxRt8us8t559mtD2pjFRZ8FMkosBH6Gox4qpxyzRaX_xpOs-2uvkMfySzJSHfOblPRz74kTlmVrkF2neC5VS51PLj-ekp4bE-qZatQ7PK8A_rPrif1_2Szr"/>
+<div class="absolute top-sm right-sm flex flex-col gap-xs items-end">
+<span class="px-xs py-0.5 rounded-sm bg-primary/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">Premium</span>
+<span class="px-xs py-0.5 rounded-sm bg-green-600/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">ATS Friendly</span>
+</div>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<p class="font-label-md text-on-surface">The Minimalist</p>
+<p class="text-[10px] text-outline">Modern • Tech</p>
+</div>
+<button class="text-primary"><span class="material-symbols-outlined text-md">favorite</span></button>
+</div>
+</div>
+<!-- Template 2 -->
+<div class="group relative space-y-sm">
+<div class="aspect-[3/4] rounded-xl overflow-hidden resume-shadow bg-surface-container relative group-hover:ring-2 ring-primary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="A sophisticated executive resume template with a sidebar. The style uses a muted gray and indigo color palette, featuring a prominent space for a professional portrait and a detailed summary section. The lighting in the mock-up is clean and bright, emphasizing the organized and high-end feel of a senior management application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Ij2IFpMB6QMwFzenPSOXjz25xOnNXWQhPqOQJ_9ocWFa12WbGwIUPhV9x3wm8ANRXYglRhiEPVcG0rIYW-N14BgvFFskWIigu7OA2kLwVQvWisWOJf_Vccqvcx2NeORBM2-6F6PJag4raD9RmiKdbFEE632ecSXMsIblecuSHdhtf1SdEmBJczc3fXIKu1m83_gtVGSu5zKIYmcnhBfyTcbmvbrZIc9CTtbKv_xSBUuA9s6nXIy3jXbzH_K03pNUKyBAkgN9qVKO"/>
+<div class="absolute top-sm right-sm flex flex-col gap-xs items-end">
+<span class="px-xs py-0.5 rounded-sm bg-green-600/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">ATS Friendly</span>
+</div>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<p class="font-label-md text-on-surface">Berlin Executive</p>
+<p class="text-[10px] text-outline">Corporate • Senior</p>
+</div>
+<button class="text-outline"><span class="material-symbols-outlined text-md">favorite</span></button>
+</div>
+</div>
+<!-- Template 3 -->
+<div class="group relative space-y-sm">
+<div class="aspect-[3/4] rounded-xl overflow-hidden resume-shadow bg-surface-container relative group-hover:ring-2 ring-primary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="A creative and vibrant resume design for a graphic designer. It features asymmetrical layouts, soft pastel background shapes, and bold typography. The visual style is artistic yet structured, showcasing a unique personality while maintaining clarity. The overall aesthetic is warm, approachable, and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh6RD1HNLdRmZKHg9y6F4vXiB04LWzqLVJ5Qfzm-_E-yPdj9pQZ8mIw-ySTgmNOf0XHqUBKxTEC5MusFGcKIiSmEm8Tuec2VOHkXAV3aIdvKeuK4p9hChCdyG17DopuL0vsEopCWDu995Bd3a4u3uNqGWgvN4RKZVqGD8BEudyMfMxwmSess8IQUfFSGRaPiFlbdH37OGrJ1CcmsAS5qpGciabgMNWbKJcI6tlfR0ELXR7mZyH1BPy8iNOnN0_ru4l-9IETDKFMdQg"/>
+<div class="absolute top-sm right-sm flex flex-col gap-xs items-end">
+<span class="px-xs py-0.5 rounded-sm bg-primary/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">Premium</span>
+</div>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<p class="font-label-md text-on-surface">Aesthetica</p>
+<p class="text-[10px] text-outline">Creative • Designer</p>
+</div>
+<button class="text-outline"><span class="material-symbols-outlined text-md">favorite</span></button>
+</div>
+</div>
+<!-- Template 4 -->
+<div class="group relative space-y-sm">
+<div class="aspect-[3/4] rounded-xl overflow-hidden resume-shadow bg-surface-container relative group-hover:ring-2 ring-primary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="A classic academic CV template with multiple pages previewed. The design is dense with information but perfectly legible, using a serif font for a traditional and authoritative feel. The color scheme is strictly black and white, suitable for research, medicine, or law professionals seeking a rigorous and formal presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtlyAMoCxHgXMCYbP5BA9_LTKJIad2ODgLyRfx9vB-mf2muQzbCiv7UE66SgvqfPtlgW3R2j5KaEFmZp9G4kpu7s5wBCtUYXtFDkY-42HQrVpgaXwmJ2ODyUbwiHIFieU1SciOWe-hEhXXxFToPa3rMNfzvB8IfU6aO3dOQqrmlM5Rpvdias3oBFjfpE2W3CazbU5F_ElXs-hV7R-p81rPDwDqI4pFbp_KOmgA6XYRrcgiabC4xi8TaDU1lLOWH0aTKAhpQ0GF9w4y"/>
+<div class="absolute top-sm right-sm flex flex-col gap-xs items-end">
+<span class="px-xs py-0.5 rounded-sm bg-green-600/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">ATS Friendly</span>
+</div>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<p class="font-label-md text-on-surface">Oxford Scholar</p>
+<p class="text-[10px] text-outline">Academic • Law</p>
+</div>
+<button class="text-outline"><span class="material-symbols-outlined text-md">favorite</span></button>
+</div>
+</div>
+<!-- Template 5 -->
+<div class="group relative space-y-sm">
+<div class="aspect-[3/4] rounded-xl overflow-hidden resume-shadow bg-surface-container relative group-hover:ring-2 ring-primary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="A bold, high-contrast dark mode resume template for a developer or cybersecurity analyst. The background is a deep navy with neon indigo text highlights and glowing status indicators. The typography is monospaced for coding skills, creating a futuristic and technically proficient atmosphere that stands out in a pile of standard resumes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcKjAjEZvDaGXtEfPFEv_qbUZrL2HPT14AoYzHSbmGgBx4g0_RGVkoO5inxQDbR-ag1AZQ8t0dlredIllutZFUs5OuaFzOw0D9SNs7fZwC89FsaVdGCIEHe9K4T7eGTvy27sG-34OdTnEmXlMEPU8LMR8hHaX6OGbB_7DWSeQF3NbrLN9Aepc3fQQEmsrCdCU3IziqV204OE5HzPt7G4qb1ZKzcyu_tWQELAwPkjkzZkggioiHa-uKff-xRo0-xO-fYlrRSgTRlrtT"/>
+<div class="absolute top-sm right-sm flex flex-col gap-xs items-end">
+<span class="px-xs py-0.5 rounded-sm bg-primary/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">Premium</span>
+<span class="px-xs py-0.5 rounded-sm bg-green-600/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">ATS Friendly</span>
+</div>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<p class="font-label-md text-on-surface">Neo-Modern</p>
+<p class="text-[10px] text-outline">Tech • Dark Mode</p>
+</div>
+<button class="text-outline"><span class="material-symbols-outlined text-md">favorite</span></button>
+</div>
+</div>
+<!-- Template 6 -->
+<div class="group relative space-y-sm">
+<div class="aspect-[3/4] rounded-xl overflow-hidden resume-shadow bg-surface-container relative group-hover:ring-2 ring-primary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="A sleek two-column resume design with a subtle blue gradient header. The layout uses progress bars for skills and a vertical timeline for experience, making it highly visual and easy to scan. The professional aesthetic is reinforced by soft shadows and a high-quality paper texture finish in the digital render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXrBcYz65x8_KvOmPPKyCH3iKKS-R4XqbwW5YQ5hutD7wisCMUdq8i8mxMpdBa8otJZj6OKJ2ud9Sj9iQ1c38surFpbLv-7IuG9Oe86LRuYsZShv1ibHeMXBF4iU1TYj0fH2ka1V4t-rPMjvdsF3D2jxIou0u8VeXSqK_VfJUFoCyrAo6maMkxbFCoARG-HfNjtq3jRgcnKwVBgtfbZo8u5bVitJGV5fx4GCPsA2DbfP1TQyp1KJQDqwRwUqhKafKz-xl-rK-HH1VL"/>
+<div class="absolute top-sm right-sm flex flex-col gap-xs items-end">
+<span class="px-xs py-0.5 rounded-sm bg-green-600/90 text-[8px] uppercase tracking-wider text-white font-bold backdrop-blur-sm">ATS Friendly</span>
+</div>
+</div>
+<div class="flex justify-between items-start px-xs">
+<div>
+<p class="font-label-md text-on-surface">Visual Pro</p>
+<p class="text-[10px] text-outline">Marketing • Sales</p>
+</div>
+<button class="text-outline"><span class="material-symbols-outlined text-md">favorite</span></button>
+</div>
+</div>
+</section>
+<!-- Feature Spotlight -->
+<section class="mt-xl px-container-padding">
+<div class="bg-primary-container rounded-2xl p-lg text-on-primary-container relative overflow-hidden">
+<div class="relative z-10 flex flex-col gap-sm">
+<h3 class="font-headline-md text-headline-md">AI Resume Analyzer</h3>
+<p class="font-body-md text-body-md opacity-90 max-w-[80%]">Score your resume against job descriptions in seconds.</p>
+<button class="mt-sm bg-on-primary-container text-primary-container w-fit px-lg py-sm rounded-xl font-label-md active:scale-95 transition-transform">Get Started</button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10 rotate-12">smart_toy</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 bg-surface/70 backdrop-blur-xl shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard_customize</span>
+<span class="font-label-sm text-label-sm">Templates</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for filter chips
+        const filterChips = document.querySelectorAll('button[class*="rounded-full"]');
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary');
+                    c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                chip.classList.add('bg-primary', 'text-on-primary');
+                chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+            });
+        });
+
+        // Simple scroll observer for glass effect reinforcement
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

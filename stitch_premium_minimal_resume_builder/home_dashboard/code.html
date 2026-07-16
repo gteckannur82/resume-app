@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#302f39",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "on-tertiary-fixed": "#351000",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#464555",
+                    "tertiary-container": "#a44100",
+                    "primary-container": "#4f46e5",
+                    "tertiary": "#7e3000",
+                    "surface-tint": "#4d44e3",
+                    "surface-bright": "#fcf8ff",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1b24",
+                    "secondary-container": "#6063ee",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed": "#07006c",
+                    "inverse-on-surface": "#f3effc",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "surface-variant": "#e4e1ee",
+                    "surface": "#fcf8ff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "secondary-fixed": "#e1e0ff",
+                    "surface-container-highest": "#e4e1ee",
+                    "outline-variant": "#c7c4d8",
+                    "surface-container": "#f0ecf9",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-dim": "#dcd8e5",
+                    "on-primary-container": "#dad7ff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1b24",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f5f2ff",
+                    "secondary": "#4648d4",
+                    "primary-fixed": "#e2dfff",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "background": "#fcf8ff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-container-high": "#eae6f4",
+                    "on-tertiary-container": "#ffd2be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-padding": "20px",
+                    "unit": "8px",
+                    "gutter": "12px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .ios-notch { width: 160px; height: 34px; background: #000; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 100; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface flex justify-center items-center min-h-screen">
+<!-- iPhone 16 Pro Frame Container -->
+<div class="relative w-[402px] h-[874px] bg-black rounded-[55px] shadow-[0_0_0_12px_#222,0_0_0_15px_#444,0_30px_100px_rgba(0,0,0,0.5)] overflow-hidden border-[8px] border-black">
+<div class="ios-notch"></div>
+<!-- App Content Area -->
+<div class="w-full h-full bg-background relative overflow-y-auto hide-scrollbar pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-container-padding py-md w-full bg-surface/70 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-fixed flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling young male professional with soft studio lighting. He is wearing a clean white shirt against a neutral grey background, embodying a modern SaaS corporate aesthetic with high-quality, sharp resolution and clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3CIEGr4sQKeVf__zMKAIgOpkDs0l1aDB8ne5d39yPbNXSrGYbaWdxmRFDwY6OdwlQOboPH-vu4zR5ZDTmKLN2Od6wnyBn2IFjtO2axFS3MuW68fOiK7vh_wyHOKEngHKc8VKzjgdarMi4lqaaoHa9LIeyfjK24w5eV-QL_cCVEMjFiz_Po6aBcguBiWNdtQuiuwEzEafzEa2bOFfS3mYT9rvkIH6d9-p7oN8iyW_klpCmj6tk_NOsatV0bchUxqCXK4feANxTB_PE"/>
+</div>
+<span class="font-display text-display text-primary tracking-tight text-[24px]">ResumEase</span>
+</div>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">notifications</button>
+</header>
+<main class="px-container-padding pt-lg">
+<!-- Greeting & Search -->
+<section class="mb-xl">
+<h1 class="font-headline-lg text-headline-lg mb-sm">Hello, Alexander</h1>
+<p class="font-body-md text-on-surface-variant mb-md">Ready to land your dream job today?</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container border-none rounded-xl py-3 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 font-body-md transition-all" placeholder="Search templates or resumes..." type="text"/>
+</div>
+</section>
+<!-- Resume Progress Card (Bento-style) -->
+<section class="mb-xl">
+<div class="bg-primary-container p-lg rounded-xl text-on-primary-container shadow-md relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider opacity-80">Current Goal</span>
+<h3 class="font-headline-md text-headline-md">Senior UX Designer</h3>
+</div>
+<span class="bg-white/20 px-3 py-1 rounded-full font-label-sm text-label-sm">75% Complete</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-white/20 rounded-full mb-lg">
+<div class="h-full bg-white rounded-full transition-all duration-1000" style="width: 75%;"></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-body-md">Complete 'Experience' section to unlock AI review</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Continue Editing Section -->
+<section class="mb-xl">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md">Continue Editing</h2>
+<button class="text-primary font-label-md hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<div class="glass-card p-md rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)] flex items-center gap-md group active:scale-95 transition-transform">
+<div class="w-16 h-20 bg-surface-variant rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A minimalist resume layout thumbnail with clean typography and elegant spacing. The document features a crisp indigo header and structured grey text blocks, presented in a high-key studio light environment that suggests professional efficiency and high-end SaaS design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1NVXIv6BkRlCLzDKIQ5o7boGjF143g0ZYTs5PNSaVnxBeLMNr4nPBYndw6J2hVki0j3T_VGSOXnTb1fixm-mnrEaYgg9XU2nWW4-kYXDKVaVnSKp_gDEWetkfpIZkAjXi8663RCH4AActk5k_cRepVvMsjxColVUx4-9Oxtv9pXJUaQif_rXMJzatxI2e096yB7umCrENl3qOwBgejCA7WlgmA4HeqMeXn_3dA6PqOqxpAONlmwxdHUwcrEAbkf5-BlaR3Lw6iAIW"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-[16px] mb-xs">Product Manager 2024</h4>
+<p class="font-body-md text-on-surface-variant text-[12px] mb-sm">Edited 2 hours ago</p>
+<div class="flex gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold">TECH</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded-full text-[10px]">PDF READY</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Recent Resumes Asymmetric List -->
+<section class="mb-xl">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md">Recent Resumes</h2>
+</div>
+<div class="flex gap-md overflow-x-auto hide-scrollbar pb-4 -mx-container-padding px-container-padding">
+<!-- Resume Card 1 -->
+<div class="min-w-[160px] bg-white rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)] p-3 flex flex-col gap-2">
+<div class="w-full aspect-[3/4] bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="A sleek vertical resume template preview with a focus on bold typography and generous whitespace. The palette is dominated by professional greys and a striking indigo accent color, perfectly aligned with modern minimalist design trends for career development tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF5ZcSXr7uYWhj-JOuy7zyC_08X7eib4TEC-TaLuxMbCc59AKOUWfSdfpiZVyyiDopNxPaL_Xw5kmFrNsUJRxR7geFdb0PrcZIdEXVvUYmnOBTEF94tgfGHbFSSYS_SiCWBN6jXatdqxp2G5wlwyXJYSQujxF7p5U1WB_MQ0zNjVWEtCLu4cDX4uwWl0tdeuH31jcNpob729EDwtGWCc2pREC7j9Ky-16x2Z5SnssN0v0G0F5E1qV2mRw6sV4cLKGPmvL6gZwIIYvH"/>
+</div>
+<div class="mt-1">
+<h5 class="font-label-md text-label-md truncate">UX Research Lead</h5>
+<p class="text-[10px] text-on-surface-variant">Last month</p>
+</div>
+</div>
+<!-- Resume Card 2 -->
+<div class="min-w-[160px] bg-white rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)] p-3 flex flex-col gap-2">
+<div class="w-full aspect-[3/4] bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="A modern professional resume design featuring a two-column layout with a sophisticated use of typography and subtle dividers. The visual style is high-end corporate minimalist, emphasizing clarity and information hierarchy in a light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZntgk1_iHKshq4ykTGq2l-e903hghO6m43hmaqsCs3SZ6ANvOL7snO3WXgUZwsFWeIkfrWUiyv4vJGazkvPzNMJtZq3sd-ZuuT5tSQ1LXQJHlJVPaTuXwn8_ZkKjXj1Rx6WnHxFWhFpqYsgn4PR6MzzIuU5FH8ONcBWQaHm7e1wPikIOMrNBkoDiLg7u6Z2InK6SOplwJjEdXKV0EnqjajwBIp7I_fwuqHz8jywDM08GjQCnW-Km0hhw86wF1uQa-DiLBDl3uDQyF"/>
+</div>
+<div class="mt-1">
+<h5 class="font-label-md text-label-md truncate">Marketing Strategy</h5>
+<p class="text-[10px] text-on-surface-variant">3 months ago</p>
+</div>
+</div>
+<!-- Resume Card 3 -->
+<div class="min-w-[160px] bg-white rounded-xl shadow-[0px_4px_20px_0px_rgba(0,0,0,0.05)] p-3 flex flex-col gap-2">
+<div class="w-full aspect-[3/4] bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center overflow-hidden">
+<div class="w-full h-full flex flex-col items-center justify-center bg-surface-container text-outline">
+<span class="material-symbols-outlined text-[40px]">description</span>
+</div>
+</div>
+<div class="mt-1">
+<h5 class="font-label-md text-label-md truncate">Side Project CV</h5>
+<p class="text-[10px] text-on-surface-variant">6 months ago</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-[110px] right-6 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform duration-200 z-50">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">add_circle</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-8 pt-2 bg-surface/70 backdrop-blur-xl shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.05)] rounded-t-xl">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Templates -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard_customize</span>
+<span class="font-label-sm text-label-sm">Templates</span>
+</a>
+<!-- Create (Manual inclusion for layout) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm">Create</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Home Indicator (iOS) -->
+<div class="fixed bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-on-surface/20 rounded-full z-[60]"></div>
+</div>
+</div>
+<script>
+        // Micro-interaction for search bar focus
+        const searchInput = document.querySelector('input');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
+
+        // Add a simple entrance animation for cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.glass-card, .bg-primary-container, .min-w-\\[160px\\]');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                card.style.transitionDelay = `${index * 100}ms`;
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 50);
+            });
+        });
+    </script>
+</body></html>
